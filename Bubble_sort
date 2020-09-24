@@ -1,0 +1,36 @@
+book1 = {"name":"Wuthering Heights",
+         "author": "Emily Bronte",
+         "publishing year": 1847
+         }
+book2 = {"name":"The Color Purple",
+         "author": "Alice Walker",
+         "publishing year": 1982
+         }
+book3 = {"name":"Born Blue",
+         "author": "Han Nolan",
+         "publishing year": 2001
+        }
+
+
+def bubble_sorting(list):
+
+    for i in range(len(list)):
+        swapped = False
+        for j in range(len(list)-1):
+            if list[j]["publishing year"]> list[j+1]["publishing year"]:
+                 current_index = j
+                 temp = list[current_index]
+                 list[current_index] = list[j+1]
+                 list[j+1] =temp
+                 swapped = True
+        if swapped == False:
+            break
+
+def main():
+    list = [book1, book3, book2]
+    bubble_sorting(list)
+    for i in range(len(list)):
+        for v,k in list[i].items():
+            print(v + ": " + str(k))
+        print("\n")
+main()
